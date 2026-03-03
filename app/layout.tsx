@@ -24,7 +24,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "ROMA Andamios | Soluciones para tu obra",
+  title: "ROMA | Soluciones para tu obra",
   description:
     "Empresa especializada en andamios, cimbras y soluciones de encofrado para proyectos de construcción.",
 };

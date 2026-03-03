@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const navColumns = [
   [
@@ -59,9 +59,14 @@ export default function Navbar() {
         {/* Brand */}
         <a
           href="/"
-          className={`flex-none text-xl font-inter font-medium tracking-[0.15em] transition-colors duration-300 ${textCol}`}
+          className="flex-none flex items-center gap-2"
         >
-          Andamios ROMA
+          <div style={{ position: "relative", width: "28px", height: "28px", flexShrink: 0 }}>
+            <Image src="/logo.png" alt="ROMA" fill className="object-contain" />
+          </div>
+          <span className={`text-xl font-inter font-medium tracking-[0.15em] transition-colors duration-300 ${textCol}`}>
+           Andamios ROMA
+          </span>
         </a>
 
         {/* Roma mark — centered */}
@@ -186,7 +191,7 @@ export default function Navbar() {
               textTransform: "uppercase",
               color: "#1b1e1c",
             }}>
-              Andamios ROMA
+              ROMA
             </span>
           </div>
 

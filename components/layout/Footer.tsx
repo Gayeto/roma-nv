@@ -57,7 +57,7 @@ export default function Footer() {
             lineHeight: 1,
             marginBottom: "0.35rem",
           }}>
-            Andamios ROMA
+            ROMA
           </p>
           <p style={{
             fontFamily: "'Inter', system-ui, sans-serif",
