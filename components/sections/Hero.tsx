@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { siteContent } from "@/lib/content";
 
 export default function Hero() {
@@ -6,14 +5,14 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden" style={{ height: "100dvh", minHeight: "560px" }}>
-      {/* Background image */}
-      <Image
-        src={hero.image}
-        alt={hero.imageAlt}
-        fill
-        priority
-        className="object-cover"
-        sizes="100vw"
+      {/* Background video */}
+      <video
+        src="/videos/video1.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
       />
 
       {/* Dark overlay */}

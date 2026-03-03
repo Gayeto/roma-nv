@@ -26,115 +26,204 @@ const STEP_ICONS = [
   </svg>,
 ];
 
+const Cards = ({ steps }: { steps: typeof import("@/lib/content").siteContent.metodologia.steps }) => (
+  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.25rem" }}>
+    {steps.map((step, i) => (
+      <div key={step.number} style={{ position: "relative", paddingTop: "1.25rem" }}>
+
+        {/* Number badge */}
+        <div style={{
+          position: "absolute",
+          top: 0,
+          left: "1.5rem",
+          width: "2.5rem",
+          height: "2.5rem",
+          backgroundColor: "#1b1e1c",
+          borderRadius: "50%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          zIndex: 2,
+        }}>
+          <span style={{
+            fontFamily: "'Inter', system-ui, sans-serif",
+            fontSize: "0.9rem",
+            fontWeight: 700,
+            color: "white",
+          }}>
+            {i + 1}
+          </span>
+        </div>
+
+        {/* Card */}
+        <div style={{
+          backgroundColor: "white",
+          borderRadius: "1rem",
+          border: "2px solid #03c516",
+          padding: "2rem 1.5rem 1.75rem",
+          height: "100%",
+        }}>
+          {/* Green icon box */}
+          <div style={{
+            width: "3rem",
+            height: "3rem",
+            backgroundColor: "#03c516",
+            borderRadius: "0.5rem",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            marginBottom: "1rem",
+          }}>
+            {STEP_ICONS[i]}
+          </div>
+
+          <h3 style={{
+            fontFamily: "'Inter', system-ui, sans-serif",
+            fontSize: "clamp(0.8rem, 1.1vw, 1rem)",
+            fontWeight: 800,
+            textTransform: "uppercase",
+            color: "#1b1e1c",
+            marginBottom: "0.75rem",
+            letterSpacing: "0.02em",
+          }}>
+            {step.name}
+          </h3>
+
+          <p style={{
+            fontFamily: "'Inter', system-ui, sans-serif",
+            fontSize: "clamp(0.78rem, 0.95vw, 0.875rem)",
+            color: "#4a4a4a",
+            lineHeight: 1.65,
+          }}>
+            {step.description}
+          </p>
+        </div>
+
+      </div>
+    ))}
+  </div>
+);
+
 export default function Metodologia() {
   const { metodologia } = siteContent;
 
   return (
-    <section
-      id="metodologia"
-      style={{
-        position: "relative",
-        backgroundColor: "#ffffff",
-        paddingInline: "clamp(0.75rem, 4vw, 5rem)",
-        paddingTop: "4rem",
-        paddingBottom: "4rem",
-        scrollMarginTop: "8rem",
-      }}
-    >
-      {/* Content */}
-      <div>
+    <section id="metodologia" style={{ scrollMarginTop: "8rem" }}>
 
-        {/* Heading */}
-        <h2
-          className="font-playfair font-normal uppercase leading-[0.9] whitespace-pre-line"
-          style={{
-            fontSize: "clamp(3rem, 7.5vw, 7rem)",
-            fontFamily: "'Playfair Display', Georgia, serif",
-            color: "#1b1e1c",
-            marginBottom: "3rem",
-          }}
-        >
-          {metodologia.headline}
-        </h2>
+      {/* ── DESKTOP: video left | content right ── */}
+      <div className="hidden md:flex" style={{ minHeight: "100vh" }}>
 
-        {/* Cards grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6">
-          {metodologia.steps.map((step, i) => (
-            <div key={step.number} style={{ position: "relative", paddingTop: "1.25rem" }}>
-
-              {/* Number badge — sits on top edge of card */}
-              <div style={{
-                position: "absolute",
-                top: 0,
-                left: "1.5rem",
-                width: "2.5rem",
-                height: "2.5rem",
-                backgroundColor: "#1b1e1c",
-                borderRadius: "50%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                zIndex: 2,
-              }}>
-                <span style={{
-                  fontFamily: "'Inter', system-ui, sans-serif",
-                  fontSize: "0.9rem",
-                  fontWeight: 700,
-                  color: "white",
-                }}>
-                  {i + 1}
-                </span>
-              </div>
-
-              {/* Card */}
-              <div style={{
-                backgroundColor: "white",
-                borderRadius: "1rem",
-                border: "2px solid #03c516",
-                padding: "2rem 1.5rem 1.75rem",
-                height: "100%",
-              }}>
-                {/* Green icon box */}
-                <div style={{
-                  width: "3rem",
-                  height: "3rem",
-                  backgroundColor: "#03c516",
-                  borderRadius: "0.5rem",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginBottom: "1rem",
-                }}>
-                  {STEP_ICONS[i]}
-                </div>
-
-                <h3 style={{
-                  fontFamily: "'Inter', system-ui, sans-serif",
-                  fontSize: "clamp(0.8rem, 1.1vw, 1rem)",
-                  fontWeight: 800,
-                  textTransform: "uppercase",
-                  color: "#1b1e1c",
-                  marginBottom: "0.75rem",
-                  letterSpacing: "0.02em",
-                }}>
-                  {step.name}
-                </h3>
-
-                <p style={{
-                  fontFamily: "'Inter', system-ui, sans-serif",
-                  fontSize: "clamp(0.78rem, 0.95vw, 0.875rem)",
-                  color: "#4a4a4a",
-                  lineHeight: 1.65,
-                }}>
-                  {step.description}
-                </p>
-              </div>
-
-            </div>
-          ))}
+        {/* Left panel: video */}
+        <div style={{ position: "relative", width: "42%", flexShrink: 0, overflow: "hidden" }}>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+          >
+            <source src="/videos/video3.mp4" type="video/mp4" />
+          </video>
+          {/* Fade right edge into white panel */}
+          <div style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(to right, transparent 65%, white 100%)",
+          }} />
         </div>
 
+        {/* Right panel: white, heading + cards */}
+        <div style={{
+          flex: 1,
+          backgroundColor: "#ffffff",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          padding: "5rem clamp(2rem, 5vw, 5rem) 5rem clamp(1rem, 3vw, 3rem)",
+        }}>
+
+          <p style={{
+            fontFamily: "'Inter', system-ui, sans-serif",
+            fontSize: "0.68rem",
+            letterSpacing: "0.22em",
+            textTransform: "uppercase",
+            color: "#03c516",
+            marginBottom: "1.25rem",
+          }}>
+            Nuestra metodología
+          </p>
+
+          <h2 style={{
+            fontFamily: "'Playfair Display', Georgia, serif",
+            fontSize: "clamp(2.5rem, 4vw, 4.5rem)",
+            fontWeight: 400,
+            textTransform: "uppercase",
+            lineHeight: 0.92,
+            color: "#1b1e1c",
+            whiteSpace: "pre-line",
+            marginBottom: "3rem",
+          }}>
+            {metodologia.headline}
+          </h2>
+
+          <Cards steps={metodologia.steps} />
+
+        </div>
       </div>
+
+      {/* ── MOBILE: video top → white content ── */}
+      <div className="md:hidden" style={{ backgroundColor: "#ffffff" }}>
+
+        {/* Video with fade to white */}
+        <div style={{ position: "relative", height: "56vw", minHeight: "200px", overflow: "hidden" }}>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+          >
+            <source src="/videos/video3.mp4" type="video/mp4" />
+          </video>
+          <div style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(to bottom, transparent 40%, white 100%)",
+          }} />
+        </div>
+
+        {/* Content */}
+        <div style={{ padding: "0 clamp(0.75rem, 4vw, 2rem) 3.5rem" }}>
+
+          <p style={{
+            fontFamily: "'Inter', system-ui, sans-serif",
+            fontSize: "0.65rem",
+            letterSpacing: "0.22em",
+            textTransform: "uppercase",
+            color: "#03c516",
+            marginBottom: "0.85rem",
+          }}>
+            Nuestra metodología
+          </p>
+
+          <h2 style={{
+            fontFamily: "'Playfair Display', Georgia, serif",
+            fontSize: "clamp(2.4rem, 11vw, 3.8rem)",
+            fontWeight: 400,
+            textTransform: "uppercase",
+            lineHeight: 0.93,
+            color: "#1b1e1c",
+            whiteSpace: "pre-line",
+            marginBottom: "2.5rem",
+          }}>
+            {metodologia.headline}
+          </h2>
+
+          <Cards steps={metodologia.steps} />
+
+        </div>
+      </div>
+
     </section>
   );
 }
