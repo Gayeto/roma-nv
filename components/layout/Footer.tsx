@@ -1,21 +1,21 @@
 "use client";
 
-import Image from "next/image";
 import { siteContent } from "@/lib/content";
+import Image from "next/image";
 
 const NAV_LINKS = [
   { label: "Inicio",              href: "/" },
-  { label: "¿Quiénes somos?",    href: "#nosotros" },
+  { label: "¿Quiénes somos?",     href: "#nosotros" },
   { label: "Nuestro diferenciador", href: "#diferenciador" },
-  { label: "Servicios",           href: "#servicios" },
-  { label: "Nuestros clientes",   href: "#clientes" },
+  { label: "Servicios",            href: "#servicios" },
+  { label: "Nuestros clientes",    href: "#clientes" },
   { label: "Proyectos",           href: "#proyectos" },
-  { label: "Metodología",         href: "#metodologia" },
-  { label: "Contacto",            href: "#contacto" },
+  { label: "Metodología",          href: "#metodologia" },
+  { label: "Contacto",             href: "#contacto" },
 ];
 
 export default function Footer() {
-  const { footer, company } = siteContent;
+  const { footer } = siteContent;
 
   return (
     <footer
@@ -35,7 +35,6 @@ export default function Footer() {
         alignItems: "center",
         gap: "1.25rem",
       }}>
-        {/* Logo */}
         <div style={{ position: "relative", width: "48px", height: "48px", flexShrink: 0 }}>
           <Image
             src="/logo.png"
@@ -45,7 +44,6 @@ export default function Footer() {
           />
         </div>
 
-        {/* Name + tagline */}
         <div>
           <p style={{
             fontFamily: "'Inter', system-ui, sans-serif",
@@ -77,7 +75,7 @@ export default function Footer() {
           paddingTop: "3rem",
           paddingBottom: "3rem",
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
           gap: "3rem 2rem",
           borderBottom: "1px solid rgba(255,255,255,0.08)",
         }}
@@ -95,40 +93,76 @@ export default function Footer() {
           }}>
             Contacto
           </p>
-          <div style={{ display: "flex", flexDirection: "column", gap: "0.55rem" }}>
-            <a
-              href={`mailto:${footer.email}`}
-              style={{
-                fontFamily: "'Inter', system-ui, sans-serif",
-                fontSize: "0.82rem",
-                color: "rgba(255,255,255,0.75)",
-                textDecoration: "none",
-                transition: "color 0.2s",
-              }}
-              onMouseEnter={e => (e.currentTarget.style.color = "white")}
-              onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.75)")}
-            >
-              {footer.email}
-            </a>
-            <a
-              href={`tel:${footer.phone}`}
-              style={{
-                fontFamily: "'Inter', system-ui, sans-serif",
-                fontSize: "0.82rem",
-                color: "rgba(255,255,255,0.75)",
-                textDecoration: "none",
-                transition: "color 0.2s",
-              }}
-              onMouseEnter={e => (e.currentTarget.style.color = "white")}
-              onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.75)")}
-            >
-              {footer.phone}
-            </a>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+            {/* Emails */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
+              <a
+                href="mailto:hector.andrade@andamiosroma.com.mx"
+                style={{
+                  fontFamily: "'Inter', system-ui, sans-serif",
+                  fontSize: "0.82rem",
+                  color: "rgba(255,255,255,0.75)",
+                  textDecoration: "none",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={e => (e.currentTarget.style.color = "white")}
+                onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.75)")}
+              >
+                hector.andrade@andamiosroma.com.mx
+              </a>
+              <a
+                href="mailto:h.cajiga@andamiosroma.com.mx"
+                style={{
+                  fontFamily: "'Inter', system-ui, sans-serif",
+                  fontSize: "0.82rem",
+                  color: "rgba(255,255,255,0.75)",
+                  textDecoration: "none",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={e => (e.currentTarget.style.color = "white")}
+                onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.75)")}
+              >
+                h.cajiga@andamiosroma.com.mx
+              </a>
+            </div>
+
+            {/* Phones */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
+              <a
+                href="tel:3331151251"
+                style={{
+                  fontFamily: "'Inter', system-ui, sans-serif",
+                  fontSize: "0.82rem",
+                  color: "rgba(255,255,255,0.75)",
+                  textDecoration: "none",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={e => (e.currentTarget.style.color = "white")}
+                onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.75)")}
+              >
+                33-3115-1251
+              </a>
+              <a
+                href="tel:5548009797"
+                style={{
+                  fontFamily: "'Inter', system-ui, sans-serif",
+                  fontSize: "0.82rem",
+                  color: "rgba(255,255,255,0.75)",
+                  textDecoration: "none",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={e => (e.currentTarget.style.color = "white")}
+                onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.75)")}
+              >
+                55-4800-9797
+              </a>
+            </div>
+
             <p style={{
               fontFamily: "'Inter', system-ui, sans-serif",
               fontSize: "0.82rem",
               color: "rgba(255,255,255,0.45)",
-              marginTop: "0.25rem",
+              lineHeight: "1.4",
             }}>
               {footer.address}
             </p>
