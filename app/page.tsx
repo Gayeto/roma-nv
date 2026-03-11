@@ -8,6 +8,7 @@ import Clientes from "@/components/sections/Clientes";
 import Proyectos from "@/components/sections/Proyectos";
 import Metodologia from "@/components/sections/Metodologia";
 import IntroLoader from "@/components/ui/IntroLoader";
+import WhatsAppButton from "@/components/ui/WhatsAppButton";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <Metodologia />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }

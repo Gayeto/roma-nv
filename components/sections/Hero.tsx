@@ -7,7 +7,7 @@ export default function Hero() {
     <section className="relative overflow-hidden" style={{ height: "100dvh", minHeight: "560px" }}>
       {/* Background video */}
       <video
-        src="/videos/video1.mp4"
+        src="/videos/Hero%20Video.mp4"
         autoPlay
         muted
         loop

@@ -122,7 +122,7 @@ export default function Metodologia() {
             playsInline
             style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
           >
-            <source src="/videos/video3.mp4" type="video/mp4" />
+            <source src="/videos/metodologia.mp4" type="video/mp4" />
           </video>
           {/* Fade right edge into white panel */}
           <div style={{
@@ -183,7 +183,7 @@ export default function Metodologia() {
             playsInline
             style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
           >
-            <source src="/videos/video3.mp4" type="video/mp4" />
+            <source src="/videos/metodologia.mp4" type="video/mp4" />
           </video>
           <div style={{
             position: "absolute",

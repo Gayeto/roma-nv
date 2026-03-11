@@ -75,8 +75,8 @@ export default function Footer() {
           paddingTop: "3rem",
           paddingBottom: "3rem",
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-          gap: "3rem 2rem",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: "3rem 4rem",
           borderBottom: "1px solid rgba(255,255,255,0.08)",
         }}
       >
@@ -204,46 +204,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Redes */}
-        <div>
-          <p style={{
-            fontFamily: "'Inter', system-ui, sans-serif",
-            fontSize: "0.62rem",
-            fontWeight: 600,
-            letterSpacing: "0.16em",
-            textTransform: "uppercase",
-            color: "rgba(255,255,255,0.35)",
-            marginBottom: "1.25rem",
-          }}>
-            Redes sociales
-          </p>
-          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
-            {footer.socials.map((social) => (
-              <li key={social}>
-                <a
-                  href="#"
-                  style={{
-                    fontFamily: "'Inter', system-ui, sans-serif",
-                    fontSize: "0.82rem",
-                    color: "rgba(255,255,255,0.65)",
-                    textDecoration: "none",
-                    transition: "color 0.2s",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "0.4rem",
-                  }}
-                  onMouseEnter={e => (e.currentTarget.style.color = "white")}
-                  onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.65)")}
-                >
-                  {social}
-                  <svg viewBox="0 0 10 10" width="9" height="9" fill="none" stroke="currentColor" strokeWidth="1.4" style={{ opacity: 0.5 }}>
-                    <path d="M2 8L8 2M3 2h5v5" />
-                  </svg>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
       </div>
 
       {/* ── Bottom bar ── */}
